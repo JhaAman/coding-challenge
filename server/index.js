@@ -10,6 +10,9 @@ const port = 8000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Allow React to view our data
+app.use(cors());
+
 // GET: all reports using fs.readFile()
 app.get("/reports", (req, res) => {
   reports.getAll(req, res);
