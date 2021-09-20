@@ -10,7 +10,7 @@
         "referenceId": "6706b3ba-bf36-4ad4-9b9d-4ebf4f4e2429",
         "referenceType": "REPORT"
       },
-      "state": "OPEN",
+      "state": "BLOCKED",
       "payload": {
         "source": "REPORT",
         "reportType": "SPAM",

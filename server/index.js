@@ -13,7 +13,12 @@ app.use(express.urlencoded({ extended: true }));
 // Allow React to view our data
 app.use(cors());
 
-// GET: all reports using fs.readFile()
+// GET: all reports
+app.get("/", (req, res) => {
+  reports.getAll(req, res);
+});
+
+// GET: all open reports using fs.readFile()
 app.get("/reports", (req, res) => {
   reports.getAll(req, res);
 });

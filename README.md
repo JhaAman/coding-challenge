@@ -42,14 +42,14 @@ Furthermore we need a way to _block_ the content and _resolve_ those reports. Th
 [x] Get one report
 [x] Update one report to 'blocked' or 'resolved' via api
 [ ] Refactor code and test edge cases
-[ ] Helper functions
+[x] Helper functions
 
 ### Finish frontend client
 
-[ ] Create React app
-[ ] Use Axios to grab any data from backend
-[ ] Create a ReportList and a Report sub-component
-[ ] Make sure all data fetching is solid, edit backend as needed
-[ ] Display all relevant data points in a Report component
+[x] Create React app
+[x] Use Axios to grab any data from backend
+[x] Create a ReportList and a Report sub-component
+[x] Make sure all data fetching is solid, edit backend as needed
+[x] Display all relevant data points in a Report component
 [ ] Make sure buttons work, and update state without refreshing page
-[ ] Style everything with some CSS
+[x] Style everything with some CSS

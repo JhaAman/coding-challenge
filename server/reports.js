@@ -19,10 +19,17 @@ const writeFile = (newData, callback) => {
   });
 };
 
-// GET: /reports - grab all reports
+// GET: / - grab all reports
 exports.getAll = (req, res) => {
   readFile((data) => {
     res.send(data.elements);
+  });
+};
+
+// GET: /reports - grab all OPEN reports
+exports.getAllOpen = (req, res) => {
+  readFile((data) => {
+    res.send(data.elements.filter((r) => r.state === "OPEN"));
   });
 };
 
