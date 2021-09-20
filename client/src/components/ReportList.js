@@ -17,9 +17,16 @@ const ReportList = () => {
   return (
     <div>
       <h2>Current Reports: {_reports.length}</h2>
-      <Report />
       {_reports.map((r) => {
-        return <Report key={r.id} id={r.id} />;
+        return (
+          <Report
+            key={r.id}
+            id={r.id}
+            state={r.state}
+            type={r.payload.reportType}
+            message={r.payload.message}
+          />
+        );
       })}
     </div>
   );

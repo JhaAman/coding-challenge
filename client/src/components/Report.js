@@ -1,9 +1,15 @@
 import React from "react";
 
-const Report = ({ id }) => {
+const Report = ({ id, state, type, message }) => {
   return (
     <div>
-      <h3>ID: {id}</h3>
+      <p>Id: {id}</p>
+      <p>State: {state}</p>
+      <a href="/">Details</a>
+      <div>
+        <p>Type: {type}</p>
+        <p>Message: {message}</p>
+      </div>
     </div>
   );
 };
