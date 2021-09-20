@@ -35,12 +35,11 @@ exports.getOne = (req, res) => {
   });
 };
 
-// PUT: /update (this doesn't do anything except paste the db on top of itself)
+// PUT: /update (this doesn't do anything)
 exports.updateOne = (req, res) => {
   readFile((data) => {
-    fs.writeFile(filepath, JSON.stringify(data, null, 2), encoding, (err) => {
-      if (err) throw err;
-      res.send(200);
+    writeFile(data, () => {
+      res.sendStatus(200);
     });
   });
 };
@@ -52,7 +51,7 @@ exports.block = (req, res) => {
     const idx = data.elements.findIndex((r) => r.id === id);
     if (idx === -1) res.sendStatus(404);
 
-    data.elements[idx] = { message: "aman should get this job" };
+    data.elements[idx].state = "BLOCKED";
 
     writeFile(data, () => {
       res.send(this.getOne(req, res));
