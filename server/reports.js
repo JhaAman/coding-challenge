@@ -29,7 +29,9 @@ exports.getAll = (req, res) => {
 // GET: /reports/:reportId - grab one report by id
 exports.getOne = (req, res) => {
   readFile((data) => {
-    res.send(data.elements.find((r) => r.id === req.params.reportId));
+    returnObj = data.elements.find((r) => r.id === req.params.reportId);
+    if (!returnObj) res.sendStatus(404);
+    res.send(returnObj);
   });
 };
 
@@ -48,10 +50,12 @@ exports.block = (req, res) => {
   readFile((data) => {
     const id = req.params.reportId;
     const idx = data.elements.findIndex((r) => r.id === id);
+    if (idx === -1) res.sendStatus(404);
+
     data.elements[idx] = { message: "aman should get this job" };
 
     writeFile(data, () => {
-      res.send(data.elements[idx]);
+      res.send(this.getOne(req, res));
     });
   });
 };
