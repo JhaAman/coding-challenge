@@ -17,11 +17,12 @@ app.get("/", (req, res) => {
 
 // GET: one report by ID
 app.get("/reports/:reportId", (req, res) => {
-  fs.readFile(filepath, encoding, (err, data) => {
-    if (err) throw err;
-    dataParsed = JSON.parse(data);
-    res.send(dataParsed.elements.find((r) => r.id === req.params.reportId));
-  });
+  reports.getOne(req, res);
+});
+
+// PUT: update one report with a new body
+app.put("/update", (req, res) => {
+  reports.updateOne(req, res);
 });
 
 app.listen(port);
