@@ -25,5 +25,10 @@ app.put("/update", (req, res) => {
   reports.updateOne(req, res);
 });
 
+// PUT: update one report with a new body
+app.put("/block/:reportId", (req, res) => {
+  reports.block(req, res);
+});
+
 app.listen(port);
 console.log(`Check out localhost:${port}`);
