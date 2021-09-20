@@ -2,9 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./report.css"; // styling
 
-const path = "http://localhost:8000";
-
-const Report = ({ id, state, type, message, getReports }) => {
+const Report = ({ id, state, type, message, getReports, path }) => {
   // Backend call to block, then update dom
   const handleBlock = () => {
     axios.put(path + "/block/" + id).then((res) => {

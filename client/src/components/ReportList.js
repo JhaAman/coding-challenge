@@ -34,6 +34,7 @@ const ReportList = () => {
             type={r.payload.reportType}
             message={r.payload.message}
             getReports={getReports}
+            path={path}
           />
         );
       })}
