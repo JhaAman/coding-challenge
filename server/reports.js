@@ -16,12 +16,10 @@ exports.getAll = (req, res) => {
   //   // Send response to insomnia (or client)
   //   res.send(JSON.parse(data).elements);
   // });
-  res.send(
-    readFile((data) => {
-      // console.log(data);
-      res.send(data.elements);
-    })
-  );
+  readFile((data) => {
+    // console.log(data);
+    res.send(data.elements);
+  });
 };
 
 exports.getOne = (req, res) => {
