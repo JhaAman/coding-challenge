@@ -40,7 +40,7 @@ Furthermore we need a way to _block_ the content and _resolve_ those reports. Th
 [x] Generic express backend
 [x] Get from the JSON file (treat it as a db)
 [x] Get one report
-[ ] Update one report to 'blocked' or 'resolved' via api
+[x] Update one report to 'blocked' or 'resolved' via api
 [ ] Refactor code and test edge cases
 [ ] Helper functions
 
