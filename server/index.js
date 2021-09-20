@@ -25,10 +25,7 @@ app.get("/reports/:reportId", (req, res) => {
   fs.readFile(filepath, encoding, (err, data) => {
     if (err) throw err;
     dataParsed = JSON.parse(data);
-    let l = typeof dataParsed.elements;
-    console.log();
-    res.sendStatus(200);
-    // res.send(dataParsed.find((r) => r.id === req.params.reportId));
+    res.send(dataParsed.elements.find((r) => r.id === req.params.reportId));
   });
 });
 

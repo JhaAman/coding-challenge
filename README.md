@@ -38,8 +38,8 @@ Furthermore we need a way to _block_ the content and _resolve_ those reports. Th
 ### Finish backend functionality
 
 [x] Generic express backend
-[ ] Get from the JSON file (treat it as a db)
-[ ] Get one report
+[x] Get from the JSON file (treat it as a db)
+[x] Get one report
 [ ] Update one report to 'blocked' or 'resolved' via api
 [ ] Refactor code and test edge cases
 [ ] Helper functions
