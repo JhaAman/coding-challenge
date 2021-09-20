@@ -4,12 +4,18 @@ import "./report.css";
 
 const path = "http://localhost:8000";
 
-const Report = ({ id, state, type, message }) => {
+const Report = ({ id, state, type, message, getReports }) => {
   const handleBlock = () => {
-    axios.put(path + "/block/" + id).then((res) => {});
+    axios.put(path + "/block/" + id).then((res) => {
+      getReports();
+    });
   };
 
-  const handleResolve = () => {};
+  const handleResolve = () => {
+    axios.put(path + "/reports/" + id).then((res) => {
+      getReports();
+    });
+  };
 
   return (
     <div className="container">

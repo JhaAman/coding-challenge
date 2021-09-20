@@ -8,10 +8,14 @@ const path = "http://localhost:8000";
 const ReportList = () => {
   const [_reports, set_reports] = useState([]);
 
-  useEffect(() => {
+  const getReports = () => {
     axios.get(path + "/reports/").then((res) => {
       set_reports(res.data);
     });
+  };
+
+  useEffect(() => {
+    getReports();
   }, []);
 
   return (
@@ -25,6 +29,7 @@ const ReportList = () => {
             state={r.state}
             type={r.payload.reportType}
             message={r.payload.message}
+            getReports={getReports}
           />
         );
       })}
