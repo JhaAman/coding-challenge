@@ -41,7 +41,7 @@ Furthermore we need a way to _block_ the content and _resolve_ those reports. Th
 [x] Get from the JSON file (treat it as a db)
 [x] Get one report
 [x] Update one report to 'blocked' or 'resolved' via api
-[ ] Refactor code and test edge cases
+[x] Refactor code and test edge cases
 [x] Helper functions
 
 ### Finish frontend client
@@ -53,3 +53,7 @@ Furthermore we need a way to _block_ the content and _resolve_ those reports. Th
 [x] Display all relevant data points in a Report component
 [x] Make sure buttons work, and update state without refreshing page
 [x] Style everything with some CSS
+
+### To Run
+
+In order to run the code, have two terminals in `/client/` and `/server/`. Run `npm start` in both.
