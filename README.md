@@ -51,5 +51,5 @@ Furthermore we need a way to _block_ the content and _resolve_ those reports. Th
 [x] Create a ReportList and a Report sub-component
 [x] Make sure all data fetching is solid, edit backend as needed
 [x] Display all relevant data points in a Report component
-[ ] Make sure buttons work, and update state without refreshing page
+[x] Make sure buttons work, and update state without refreshing page
 [x] Style everything with some CSS

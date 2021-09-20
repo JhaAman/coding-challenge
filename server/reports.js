@@ -8,6 +8,7 @@ const encoding = "utf-8";
 const readFile = (callback) => {
   fs.readFile(filepath, encoding, (err, data) => {
     if (err) throw err;
+    if (!data) return;
     callback(JSON.parse(data));
   });
 };
