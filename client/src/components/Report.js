@@ -7,7 +7,7 @@ const Report = ({ id, state, type, message }) => {
       <div className="left">
         <p>Id: {id}</p>
         <p>State: {state}</p>
-        <a href="/">Details</a>
+        <a href="#">Details</a>
       </div>
       <div className="middle">
         <p>Type: {type}</p>
