@@ -25,9 +25,14 @@ app.put("/update", (req, res) => {
   reports.updateOne(req, res);
 });
 
-// PUT: update one report with a new body
+// PUT: block a report by :reportId
 app.put("/block/:reportId", (req, res) => {
   reports.block(req, res);
+});
+
+// PUT: resolve a report by :reportId
+app.put("/reports/:reportId", (req, res) => {
+  reports.resolve(req, res);
 });
 
 app.listen(port);

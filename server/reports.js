@@ -54,7 +54,21 @@ exports.block = (req, res) => {
     data.elements[idx].state = "BLOCKED";
 
     writeFile(data, () => {
-      // res.send(this.getOne(req, res));
+      this.getOne(req, res);
+    });
+  });
+};
+
+// PUT: /reports/:reportId - mark a report as resolved so my app can't see it
+exports.resolve = (req, res) => {
+  readFile((data) => {
+    const id = req.params.reportId;
+    const idx = data.elements.findIndex((r) => r.id === id);
+    if (idx === -1) res.sendStatus(404);
+
+    data.elements[idx].state = "RESOLVED";
+
+    writeFile(data, () => {
       this.getOne(req, res);
     });
   });
