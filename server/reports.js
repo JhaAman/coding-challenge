@@ -3,10 +3,10 @@ const fs = require("fs");
 const filepath = "./data/reports.json";
 const encoding = "utf-8";
 
-const readFile = () => {
+const readFile = (callback) => {
   fs.readFile(filepath, encoding, (err, data) => {
     if (err) throw err;
-    return JSON.parse(data);
+    callback(JSON.parse(data));
   });
 };
 
@@ -16,7 +16,12 @@ exports.getAll = (req, res) => {
   //   // Send response to insomnia (or client)
   //   res.send(JSON.parse(data).elements);
   // });
-  res.send(readFile().elements);
+  res.send(
+    readFile((data) => {
+      // console.log(data);
+      res.send(data.elements);
+    })
+  );
 };
 
 exports.getOne = (req, res) => {

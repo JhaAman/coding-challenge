@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // GET: all reports using fs.readFile()
-app.get("/", (req, res) => {
+app.get("/reports", (req, res) => {
   reports.getAll(req, res);
 });
 
