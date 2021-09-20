@@ -23,14 +23,17 @@ exports.getOne = (req, res) => {
 };
 
 exports.updateOne = (req, res) => {
-  let oldData = [];
   readFile((data) => {
-    oldData = data.elements;
-    console.log(data);
-  });
+    const oldData = data;
 
-  // fs.writeFile(filepath, JSON.stringify(oldData), encoding, (err) => {
-  //   if (err) throw err;
-  //   res.send(200);
-  // });
+    fs.writeFile(
+      filepath,
+      JSON.stringify(oldData, null, 2),
+      encoding,
+      (err) => {
+        if (err) throw err;
+        res.send(200);
+      }
+    );
+  });
 };
