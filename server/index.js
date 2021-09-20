@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // GET: all reports using fs.readFile()
 app.get("/", (req, res) => {
-  reports.getAll();
+  reports.getAll(req, res);
 });
 
 // GET: one report by ID
