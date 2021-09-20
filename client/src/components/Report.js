@@ -1,4 +1,5 @@
 import React from "react";
+import "./report.css";
 
 const Report = ({ id, state, type, message }) => {
   return (

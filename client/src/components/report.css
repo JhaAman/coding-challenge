@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  width: 50%;
+  border-style: solid;
+}
+.left {
+  flex: 2;
+  padding: 2%;
+}
+.middle {
+  flex: 2;
+  padding: 2%;
+}
+.right {
+  flex: 2;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 2%;
+}
