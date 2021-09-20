@@ -1,7 +1,11 @@
 .container {
   display: flex;
   width: 50%;
+  justify-content: center;
+  align-items: top;
   border-style: solid;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 .left {
   flex: 2;
@@ -12,7 +16,7 @@
   padding: 2%;
 }
 .right {
-  flex: 2;
+  flex: 1;
   justify-content: center;
   display: flex;
   flex-direction: column;
