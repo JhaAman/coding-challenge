@@ -15,7 +15,17 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   fs.readFile(filepath, encoding, (err, data) => {
     if (err) throw err;
-    res.send(JSON.parse(data));
+    // Send response to insomnia (or client)
+    res.send(JSON.parse(data).elements);
+  });
+});
+
+// GET: one report by ID
+app.get("/reports/:reportId", (req, res) => {
+  fs.readFile(filepath, encoding, (err, data) => {
+    if (err) throw err;
+    dataParsed = JSON.parse(data);
+    res.send(dataParsed.find((r) => r.id === req.params.reportId));
   });
 });
 

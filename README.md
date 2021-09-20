@@ -5,7 +5,7 @@ The purpose of this test is to see how you approach problems as well as to evalu
 
 ## Challenge description
 
-This challenge imagines that we have a social media platform that is under attack from spam. We have implemented a reporting system for users that lets them report spam to the platform, and our spam protection team.  
+This challenge imagines that we have a social media platform that is under attack from spam. We have implemented a reporting system for users that lets them report spam to the platform, and our spam protection team.
 
 The challenge is to create a small full stack application for our spam protection team that consists of a server and a web based UI in order to manage reported content.
 
@@ -17,17 +17,39 @@ We provide an example listing response ([`data/reports.json`](data/reports.json)
 
 Furthermore we need a way to _block_ the content and _resolve_ those reports. The two buttons in the UI should do a call to your backend service in order to block the content or to resolve the ticket. You are free to implement the blocking as you want, however the resolving should be defined as a `PUT` request to an endpoint with this structure `/reports/:reportId`. An example request for how to update a report is in [`data/update_ticket_request.json`](data/update_ticket_request.json).
 
-
 - **`Block`:** Means that the content should no longer be available to users
 - **`Resolve`:** Means that the report is considered "resolved", and it is no longer visible to the spam protection team
 - **`Details`:** Functionality can be ignored.
 
 ## Instructions
+
 - Please don't spend more than **3 hours**.
 - Choose whatever frameworks you are comfortable with and that lets you achieve a solution in the given time limit. Please nothing too esoteric. We prefer Java, Ruby, Node.js, Python or Elixir.
 - Provide the solution source code either as zip or as a link to the code repository
 
-## What we're looking for:
+## What we're looking for
+
 - Code quality
 - Technical choices
 - A runnable full-stack application
+
+## TODO:
+
+### Finish backend functionality
+
+[x] Generic express backend
+[ ] Get from the JSON file (treat it as a db)
+[ ] Get one report
+[ ] Update one report to 'blocked' or 'resolved' via api
+[ ] Refactor code and test edge cases
+[ ] Helper functions
+
+### Finish frontend client
+
+[ ] Create React app
+[ ] Use Axios to grab any data from backend
+[ ] Create a ReportList and a Report sub-component
+[ ] Make sure all data fetching is solid, edit backend as needed
+[ ] Display all relevant data points in a Report component
+[ ] Make sure buttons work, and update state without refreshing page
+[ ] Style everything with some CSS
