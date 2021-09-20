@@ -54,7 +54,8 @@ exports.block = (req, res) => {
     data.elements[idx].state = "BLOCKED";
 
     writeFile(data, () => {
-      res.send(this.getOne(req, res));
+      // res.send(this.getOne(req, res));
+      this.getOne(req, res);
     });
   });
 };
