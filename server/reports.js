@@ -20,10 +20,8 @@ exports.getOne = (req, res) => {
 };
 
 exports.updateOne = (req, res) => {
-  newData = {
-    message: "aman should get this job",
-  };
-  fs.writeFile(filepath, JSON.stringify(newData), encoding, (err) => {
+  oldData = this.getAll(req, res);
+  fs.writeFile(filepath, JSON.stringify(oldData), encoding, (err) => {
     if (err) throw err;
     res.send(200);
   });
