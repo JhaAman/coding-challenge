@@ -53,28 +53,15 @@ exports.updateOne = (req, res) => {
 };
 
 // PUT: /block/:reportId - mark a report as blocked so it can't be viewed
-exports.block = (req, res) => {
-  readFile((data) => {
-    const id = req.params.reportId;
-    const idx = data.elements.findIndex((r) => r.id === id);
-    if (idx === -1) res.sendStatus(404);
-
-    data.elements[idx].state = "BLOCKED";
-
-    writeFile(data, () => {
-      this.getOne(req, res);
-    });
-  });
-};
-
 // PUT: /reports/:reportId - mark a report as resolved so my app can't see it
-exports.resolve = (req, res) => {
+// PUT: /reports/:reportId and /block/:reportId => handles both cases
+exports.handle = (req, res, handle) => {
   readFile((data) => {
     const id = req.params.reportId;
     const idx = data.elements.findIndex((r) => r.id === id);
     if (idx === -1) res.sendStatus(404);
 
-    data.elements[idx].state = "RESOLVED";
+    data.elements[idx].state = handle;
 
     writeFile(data, () => {
       this.getOne(req, res);

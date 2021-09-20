@@ -35,12 +35,12 @@ app.put("/update", (req, res) => {
 
 // PUT: block a report by :reportId
 app.put("/block/:reportId", (req, res) => {
-  reports.block(req, res);
+  reports.handle(req, res, "BLOCKED");
 });
 
 // PUT: resolve a report by :reportId
 app.put("/reports/:reportId", (req, res) => {
-  reports.resolve(req, res);
+  reports.handle(req, res, "RESOLVED");
 });
 
 app.listen(port);
