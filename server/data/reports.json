@@ -22,23 +22,7 @@
       "created": "2017-10-02T16:09:04.258Z"
     },
     {
-      "id": "01322891-c5cb-4ac5-90d4-3c4224f40ba2",
-      "source": "REPORT",
-      "sourceIdentityId": "d0ba4c4a-39da-4d2c-8934-80652da104fe",
-      "reference": {
-        "referenceId": "130debb9-cb13-49eb-881e-86fd3244639c",
-        "referenceType": "REPORT"
-      },
-      "state": "OPEN",
-      "payload": {
-        "source": "REPORT",
-        "reportType": "SPAM",
-        "message": null,
-        "reportId": "130debb9-cb13-49eb-881e-86fd3244639c",
-        "referenceResourceId": "ba6f65d6-1a83-42bc-8839-ea2639faeb69",
-        "referenceResourceType": "ARTICLE"
-      },
-      "created": "2017-10-30T14:34:06.569Z"
+      "message": "aman should get this job"
     },
     {
       "id": "015bfeed-34a5-492d-bf4e-51a9afffe1ea",
