@@ -23,7 +23,7 @@ exports.updateOne = (req, res) => {
   newData = {
     message: "aman should get this job",
   };
-  fs.writeFile(JSON.stringify(newData), filepath, encoding, (err) => {
+  fs.writeFile(filepath, JSON.stringify(newData), encoding, (err) => {
     if (err) throw err;
     res.send(200);
   });
