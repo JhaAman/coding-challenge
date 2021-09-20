@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 
 // GET: all open reports using fs.readFile()
 app.get("/reports", (req, res) => {
-  reports.getAll(req, res);
+  reports.getAllOpen(req, res);
 });
 
 // GET: one report by ID
